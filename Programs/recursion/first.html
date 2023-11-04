@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include<stdio.h>
+            int factorial(int num)
+            {
+                if (num==0 || num ==1)
+                {
+                    return 1;
+                }
+                else
+                return num*factorial(num-1);
+            }
+            void main()
+            {
+                int num;
+                printf("Enter Number\n");
+                scanf("%d",&num);
+                printf("Factorial of %d is %d",num,factorial(num));
+            }
+            OUTPUT
+            Enter Number
+1
+Factorial of 1 is 12
+dash: 2: 2: not found
+3
+dash: 3: 3: not found
+
+    </pre>
+</body>
+</html>

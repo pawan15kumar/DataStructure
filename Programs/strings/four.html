@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include <stdio.h>
+    
+            void get(char str[],int s)
+            {
+                int i;
+                char c;
+                printf("Enter Sentance\n");
+                for ( i = 0; i < s; i++)
+                {
+                    c=getchar();
+                    if(c=='\n')
+                    break;
+                    str[i]=c;
+                }
+                str[i]='\0';
+            }
+            void main()
+            {
+               
+                char str[50];
+                int i;
+                get(str,50);
+                if (str[0]>='a' && str[0]<='z')
+                {
+                    str[0]=str[0]-32;
+                }
+                
+                for ( i = 0; i < 50; i++)
+                {
+                    if(str[i]=='.'||str[i]=='?' || str[i]==' ')
+                    str[i+1]=str[i+1]-32;
+                }
+                
+                printf("Sentance is : %s",str);
+            }
+          
+output
+Enter value at 1 position
+4
+Enter value at 2 position
+3
+Enter value at 3 position
+2
+Enter value at 4 position
+5
+Enter value at 5 position
+6
+Enter value at 6 position
+9
+Enter value at 7 position
+8
+Enter value at 8 position
+15
+Enter value at 9 position
+24
+Enter value at 10 position
+56
+Your Enter Array is :- 
+
+4
+3
+2
+5
+6
+9
+8
+15
+24
+56    
+    </pre>
+</body>
+</html>
