@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        
+            void get(char str[],int s)
+            {
+            int i;
+            char c;
+            for ( i = 0; i < s; i++)
+            {
+                c=getchar();
+                if (c=='\n')
+                {
+                    break;
+                }
+                str[i]=c;  
+            }
+            str[i]='\0';
+            }
+                void main()
+                {
+                    char str[50];
+                    printf("Enter String:\n");
+                    get(str,50);
+                    for (int i = 0; str[i]!='\0'; i++)
+                    {
+                        str[i]=str[i]+32;
+                    }
+                   printf("%s",str); 
+                }
+output
+Enter String:
+        MY NAME IS PAWAN    
+        String in lowercase :- my name is pawan                  
+    </pre>
+</body>
+</html>

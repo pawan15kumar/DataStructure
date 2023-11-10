@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include <stdio.h>
+            #include<conio.h>
+            #include<dos.h>
+            char *strsort(char str[])
+            {
+                char temp;
+                int i, j;
+                for (i = 0; str[i]; i++)
+                {
+                    for (j = i+1; str[j]; j++)
+                    {
+                        if (str[i] > str[j])
+                        {
+                            temp = str[i];
+                            str[i] = str[j];
+                            str[j] = temp;
+                        }
+                    }
+                    if (str[i + 2] == '\0')
+                        break;
+                }
+            
+                return str;
+            }
+            void main()
+            {
+                char str[30];
+                clrscr();
+                printf("Enter a String\n");
+                gets(str);
+                printf("Sorted String: %s", strsort(str));
+                delay(5000);
+            }
+    0utput
+    Enter a String
+    ABSSETE                                                                         
+    Sorted String: ABEESST             
+    </pre>
+</body>
+</html>

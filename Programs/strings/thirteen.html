@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include<stdio.h>
+            #include<conio.h>
+            #include<dos.h>
+            char* strrevcpy(char dest[], char src[]){
+                int i = 0, j = 0;
+                while(src[j] != '\0')
+                    j++;
+                
+                while(src[i] != '\0'){
+                    dest[i++] = src[--j];
+                } 
+                dest[i] = src[i]; 
+                return dest;
+            }
+            
+            void main(){
+                char str[30], copiedstr[30];
+                clrscr();
+                printf("Enter String\n");
+                gets(str);
+                printf("Copied String is %s\n", strrevcpy(copiedstr, str));
+                delay(5000);
+            }
+                
+OUTPUT
+Enter String
+    CodeWhere                                                                       
+    Copied String is erehWedoC           
+    </pre>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include<stdio.h>
+            #include<conio.h>
+            #include<dos.h>
+            void main(){
+                char str[30];
+                int i, ch = 0, spaces = 0, words = 0, lines = 0;
+                clrscr();
+                printf("Enter String\n");
+                gets(str);
+                for (i = 0; str[i] != '\0'; i++)
+                {
+                    if(i == 0 && str[i] != ' '){
+                        words++;
+                    }
+                    else if(str[i] == ' ')
+                    {
+                        spaces++;
+                        if(str[i+1] != ' ' && str[i+1] != ' ')
+                        {
+                            words++;
+                        }
+                    }
+                    else if(str[i] == '\n')
+                    {
+                        lines++;
+                        if(str[i+1] != ' ' && str[i+1] != ' ')
+                        {
+                            words++;
+                        }
+                    }
+                    ch++;
+                }
+                printf("Number of Characters = %d\n", ch);
+                printf("Number of Words = %d\n", words);
+                printf("Number of Spaces = %d\n", spaces);
+                printf("Number of Lines = %d\n", lines);
+                delay(5000);
+            }
+  OUTPUT
+  Enter String
+    Hello World. I am boy                                                           
+    Number of Characters = 21                                                       
+    Number of Words = 5                                                             
+    Number of Spaces = 4                                                            
+    Number of Lines = 0          
+    </pre>
+</body>
+</html>

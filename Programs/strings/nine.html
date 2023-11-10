@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include <stdio.h>
+      
+    
+            void get(char str[],int s)
+            {
+                int i;
+                char c;
+                printf("Enter Sentance\n");
+                for ( i = 0; i < s; i++)
+                {
+                    c=getchar();
+                    if(c=='\n')
+                    break;
+                    str[i]=c;
+                }
+                str[i]='\0';
+            }
+            void display(char str3[])
+            {
+               
+                    printf("concatenate string is %s",str3);
+            }
+            void concatenate(char str[],char str2[])
+            {
+                int i,j;
+                char r[50];
+                for ( i = 0; str[i]!='\0'; i++)
+                {
+                    r[i]=str[i];
+                }
+                 for ( j = 0; str2[j]!='\0'; j++)
+                {
+                    r[i+j]=str2[j];
+                }
+                r[i+j]='\0';
+                display(r);
+            }
+            void main()
+            {
+               
+                char str[50],str2[50];
+                int i;
+                get(str,50);
+                get(str2,50);
+                concatenate(str,str2);
+                
+            }
+      output
+      Enter value at 1 position
+4
+Enter value at 2 position
+3
+Enter value at 3 position
+2
+Enter value at 4 position
+5
+Enter value at 5 position
+6
+Enter value at 6 position
+9
+Enter value at 7 position
+8
+Enter value at 8 position
+15
+Enter value at 9 position
+24
+Enter value at 10 position
+56
+Your Enter Array is :- 
+
+4
+3
+2
+5
+6
+9
+8
+15
+24
+56
+    </pre>
+</body>
+</html>

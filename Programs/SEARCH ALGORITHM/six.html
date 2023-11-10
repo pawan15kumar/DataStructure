@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include <stdio.h>
+            #include <string.h>
+            #include <conio.h>
+            #include <dos.h>
+            int binarySearch(char arr[], int l, int u, char key) {
+                int mid = l + (u - l) / 2;
+                if (l > u) 
+                {
+                    return -1;
+                }
+                if (arr[mid] == key)
+                {
+                    return mid;
+                }
+                else if (arr[mid] > key){
+                    u = mid-1;
+                }
+                else{
+                    l = mid+1;
+                }
+                
+                return binarySearch(arr, l, u, key); 
+            }
+            
+            void main() {
+                char arr[20], key;
+                int result;
+                clrscr();
+                printf("Enter any String\n");
+                gets(arr);
+            
+                printf("Enter Value to be searched\n");
+                scanf("%c", &key);
+                result = binarySearch(arr, 0, strlen(arr)-1, key);
+            
+                if (result == -1) {
+                printf("Element %c not found in the array.\n", key);
+                } else {
+                printf("Element %c found at position %d.\n", key, result+1);
+                }
+            
+                delay(5000);
+            }
+        OUTPUT
+        Enter any String
+    hello world
+    Enter Value to be searched
+    r
+    Element r found at position 9.        
+    </pre>
+</body>
+</html>

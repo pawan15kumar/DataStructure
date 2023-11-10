@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #include<stdio.h>
+            #include<conio.h>
+            #include<dos.h>
+            long strLength(char str[]){
+                int len;
+                for (len = 0; str[len] != '\0'; len++);
+                return len;
+            }
+            
+            long countWord(char str[], char word[]){
+                int i, j, strlen, wordlen, count = 0;
+                strlen = strLength(str);
+                wordlen = strLength(word);
+                
+                for (i = 0; i <= strlen - wordlen; i++) {
+                    int match = 1;
+            
+                    for (j = 0; j < wordlen; j++) {
+                        if (str[i + j] != word[j]) {
+                            match = 0;
+                            break;
+                        }
+                    }
+            
+                    if (match) {
+                        count++;
+                        i += wordlen - 1;  
+                    }
+                }
+                return count;
+            }
+            
+            void main(){
+                char str[30], word[10];
+                clrscr();
+                printf("Enter Sentence\n");
+                gets(str);
+                printf("Enter word to be search\n");
+                gets(word);
+                printf("%s present %ld times", word, countWord(str, word));
+                delay(5000);
+            }
+            OUTPUT
+            Enter Sentence
+            Hello I am a boy. I am 20                                                       
+            Enter word to be search
+            am                                                                              
+            am present 2 times 
+    </pre>
+</body>
+</html>
