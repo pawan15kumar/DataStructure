@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <pre>
+    #include<stdio.h>
+        void dfs(int, int[][10], int[], int);
+        void initializeVisitArray(int[], int);
+        
+        int main() {
+            int i, j, a[10][10], visit[10], n;
+        
+            printf("Enter number of nodes: ");
+            scanf("%d", &n);
+        
+            printf("Enter adjacency matrix of the graph:\n");
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < n; j++) {
+                    scanf("%d", &a[i][j]);
+                }
+            }
+        
+            initializeVisitArray(visit, n);
+            dfs(0, a, visit, n);
+            
+            return 0;
+        }
+        
+        void dfs(int v, int a[][10], int visit[], int n) {
+            int i;
+        
+            printf("Visit %d\n", v);
+            visit[v] = 1;
+        
+            for (i = 0; i < n; i++) {
+                if (!visit[i] && a[v][i] == 1) {
+                    dfs(i, a, visit, n);
+                }
+            }
+        }
+        
+        void initializeVisitArray(int visit[], int n) {
+            int i;
+            for (i = 0; i < n; i++) {
+                visit[i] = 0;
+            }
+        }
+        
+        output
+            Enter number of nodes: 5
+            Enter adjacency matrix of the graph:
+            0
+            1
+            1
+            0
+            1
+            1
+            1
+            0
+            0
+            1
+            0
+            1
+            0
+            0
+            0
+            1
+            1
+            1
+            0
+            0
+            1
+            1
+            0
+            0
+            1
+            Visit 0
+            Visit 1
+            Visit 4
+            Visit 2
+            
+   </pre> 
+</body>
+</html>
